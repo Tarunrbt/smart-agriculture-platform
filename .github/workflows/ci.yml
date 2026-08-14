@@ -1,0 +1,48 @@
+name: Smart Agriculture CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  repository-validation:
+    name: Repository Validation
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Verify repository foundation
+        run: |
+          set -e
+
+          test -f README.md
+          test -f .gitignore
+          test -f docs/ARCHITECTURE.md
+
+          test -d docs
+          test -d .github
+          test -d .github/workflows
+
+          echo "Repository foundation: OK"
+
+      - name: Verify architecture document
+        run: |
+          set -e
+
+          grep -q "Smart Agriculture Platform Architecture" \
+            docs/ARCHITECTURE.md
+
+          grep -q "ESP32" \
+            docs/ARCHITECTURE.md
+
+          grep -q "rule-based and auditable" \
+            docs/ARCHITECTURE.md
+
+          echo "Architecture validation: OK"
