@@ -16,12 +16,12 @@ Not approved. Not implementation-ready.
 | light_intensity | Integer | Light intensity |
 | pH_level | Float | Soil pH level |
 
-## 2. Unresolved Decisions
+## 2. Contract Decisions
 
 ### 2.1 Units — RESOLVED
 
 - temperature unit: Celsius (°C)
-- humidity unit: Relative Humidity, % (0–100)
+- humidity unit: Relative Humidity, % (percentage scale; 0–100 denotes the unit's numeric range only, not an authoritative validation range — see §2.6)
 - soil_moisture unit: % (Volumetric Water Content convention), hardware-agnostic
 - light_intensity unit: Lux
 
@@ -76,3 +76,5 @@ The contract becomes implementation-ready only after the unresolved decisions ar
 ## 5. Next Dependency
 
 The Backend API Contract v1 must not be finalized by any agent until the Sensor Payload Contract has been explicitly reviewed and human-approved.
+
+This pull request (bugFix → main) must not be merged until all decisions in Section 2 are resolved and explicitly human-approved.
