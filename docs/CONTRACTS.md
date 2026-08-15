@@ -59,11 +59,20 @@ Authoritative validation ranges for each sensor value are unresolved.
 
 ### 2.7 Field Presence and Invalid-Value Semantics
 
-Whether each field is required, optional, or nullable is unresolved.
+Current field-presence decisions:
 
-Behavior when a field is missing, null, or invalid (e.g. rejected, stored as-is, flagged) is unresolved.
+- `device_id`: required and non-null.
+- `location_id`: required and non-null.
+- `timestamp`: required/nullable/omittable status remains unresolved.
+- `temperature`: required/nullable/omittable status remains unresolved.
+- `humidity`: required/nullable/omittable status remains unresolved.
+- `soil_moisture`: required/nullable/omittable status remains unresolved.
+- `light_intensity`: required/nullable/omittable status remains unresolved.
+- `pH_level`: required/nullable/omittable status remains unresolved.
 
-How downstream consumers (backend, dashboard) should handle missing or invalid values is unresolved.
+Behavior when a field is missing, null, or invalid (e.g. rejected, stored as-is, flagged) remains unresolved.
+
+How downstream consumers (backend, dashboard) should handle missing, null, or invalid values remains unresolved and must not be inferred as an approved contract behavior.
 
 ## 3. Architecture Constraints
 
