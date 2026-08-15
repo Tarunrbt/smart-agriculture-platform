@@ -18,30 +18,41 @@ Not approved. Not implementation-ready.
 
 ## 2. Unresolved Decisions
 
-### 2.1 Units
-- temperature unit: unresolved
-- humidity unit: unresolved
-- soil_moisture representation/unit: unresolved
-- light_intensity unit: unresolved
+### 2.1 Units — RESOLVED
 
-### 2.2 Timestamp
-Exact timestamp format and timezone semantics are unresolved.
+- temperature unit: Celsius (°C)
+- humidity unit: Relative Humidity, % (0–100)
+- soil_moisture unit: % (Volumetric Water Content convention), hardware-agnostic
+- light_intensity unit: Lux
+
+### 2.2 Timestamp — PARTIALLY RESOLVED
+
+Format: ISO 8601 UTC (`YYYY-MM-DDTHH:MM:SSZ`).
+
+Unresolved: timestamp source — whether the timestamp is set by the edge device (ESP32) or stamped on arrival by the backend is undecided.
 
 ### 2.3 Device Identity
+
 Whether `device_id` is required is unresolved.
 
 ### 2.4 Location Identity
+
 Whether `location_id`, field ID, plot ID, or another location identifier is required is unresolved.
 
 ### 2.5 Sensor Evidence / Validation Metadata
+
 Whether sensor validity/status metadata belongs in the payload or is handled by the backend is unresolved.
 
 ### 2.6 Valid Ranges
+
 Authoritative validation ranges for each sensor value are unresolved.
 
 ### 2.7 Field Presence and Invalid-Value Semantics
+
 Whether each field is required, optional, or nullable is unresolved.
+
 Behavior when a field is missing, null, or invalid (e.g. rejected, stored as-is, flagged) is unresolved.
+
 How downstream consumers (backend, dashboard) should handle missing or invalid values is unresolved.
 
 ## 3. Architecture Constraints
