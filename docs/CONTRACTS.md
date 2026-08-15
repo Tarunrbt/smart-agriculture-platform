@@ -39,6 +39,11 @@ Whether sensor validity/status metadata belongs in the payload or is handled by 
 ### 2.6 Valid Ranges
 Authoritative validation ranges for each sensor value are unresolved.
 
+### 2.7 Field Presence and Invalid-Value Semantics
+Whether each field is required, optional, or nullable is unresolved.
+Behavior when a field is missing, null, or invalid (e.g. rejected, stored as-is, flagged) is unresolved.
+How downstream consumers (backend, dashboard) should handle missing or invalid values is unresolved.
+
 ## 3. Architecture Constraints
 
 The following existing architecture principles apply:
@@ -59,4 +64,4 @@ The contract becomes implementation-ready only after the unresolved decisions ar
 
 ## 5. Next Dependency
 
-ChatGPT must not finalize the Backend API Contract v1 until the Sensor Payload Contract has been approved.
+The Backend API Contract v1 must not be finalized by any agent until the Sensor Payload Contract has been explicitly reviewed and human-approved.
