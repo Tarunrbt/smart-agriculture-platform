@@ -10,6 +10,8 @@ Not approved. Not implementation-ready.
 | Field | Data Type | Description |
 |---|---|---|
 | timestamp | String | Time of sensor reading |
+| device_id | String | Unique application-level device identifier |
+| location_id | String | Identifier for the sensor deployment location |
 | temperature | Float | Ambient temperature |
 | humidity | Float | Ambient humidity |
 | soil_moisture | Float | Soil moisture level |
@@ -31,13 +33,21 @@ Format: ISO 8601 UTC (`YYYY-MM-DDTHH:MM:SSZ`).
 
 Unresolved: timestamp source — whether the timestamp is set by the edge device (ESP32) or stamped on arrival by the backend is undecided.
 
-### 2.3 Device Identity
+### 2.3 Device Identity — RESOLVED
 
-Whether `device_id` is required is unresolved.
+`device_id` is required.
 
-### 2.4 Location Identity
+Each deployed device must have a unique application-level identifier.
 
-Whether `location_id`, field ID, plot ID, or another location identifier is required is unresolved.
+The identifier format and assignment mechanism remain unresolved.
+
+### 2.4 Location Identity — RESOLVED
+
+`location_id` is required.
+
+Each sensor deployment must be associated with a location identifier.
+
+The location hierarchy and assignment mechanism remain unresolved.
 
 ### 2.5 Sensor Evidence / Validation Metadata
 
