@@ -1,5 +1,14 @@
 # Smart Agriculture Platform
 
+# Smart Agriculture Platform
+
+<a href="https://github.com/Tarunrbt/smart-agriculture/actions/workflows/ci.yml">
+  <img src="https://github.com/Tarunrbt/smart-agriculture/actions/workflows/ci.yml/badge.svg?branch=main" alt="Smart Agriculture CI">
+</a>
+
+IoT-based smart agriculture platform for sensor monitoring,
+data collection, automation, and agricultural decision support.
+
 IoT-based smart agriculture platform for sensor monitoring,
 data collection, automation, and agricultural decision support.
 
