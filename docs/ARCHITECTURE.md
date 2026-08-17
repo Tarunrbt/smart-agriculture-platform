@@ -7,13 +7,15 @@ Draft — Phase 0.
 ## System Flow
 
 Sensors
-→ ESP32 Edge Controller
-→ Network Transport
-→ Backend API
+→ Arduino Uno
+→ USB Serial
+→ Laptop Backend API
 → Data / Rules
 → Dashboard
 → Control Decision
-→ Pump / Valve
+→ Arduino Uno
+→ Relay
+→ Pump / Fan / Motor
 
 ## Design Principles
 
@@ -27,7 +29,11 @@ Sensors
 
 ## Current Decision
 
-ESP32 is the target edge-controller family for the initial IoT prototype.
+Arduino Uno is the target edge controller for the initial IoT prototype.
 
-The exact ESP32 board and sensor modules will be selected before firmware
-implementation is finalized.
+The Arduino Uno communicates with the laptop backend through USB Serial.
+The laptop hosts the backend and dashboard-side services; controller-to-backend
+communication is not based on Wi-Fi or other network transport in the current MVP.
+
+The exact sensor modules and actuator interfaces will be validated before
+firmware implementation is finalized.
