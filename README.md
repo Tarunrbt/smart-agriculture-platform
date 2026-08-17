@@ -14,7 +14,10 @@ data collection, automation, and agricultural decision support.
 
 ## Initial Architecture
 
-Sensors → ESP32 Edge Controller → Network → Backend → Dashboard
+Sensors → Arduino Uno → USB Serial → Laptop Backend → Dashboard
+
+The Arduino Uno is the edge controller. The laptop hosts the backend and
+communicates with the Arduino Uno through USB Serial.
 
 ## Current Phase
 
@@ -22,13 +25,15 @@ Phase 0 — Repository and architecture foundation.
 
 ## Planned Components
 
-- ESP32-based edge controller
+- Arduino Uno-based edge controller
 - Soil moisture sensing
 - Temperature and humidity sensing
+- Rain detection
 - Sensor data ingestion
 - Backend API
 - Dashboard
 - Rule-based irrigation control
+- Relay-controlled pump/fan/motor actuation
 - Automated firmware build and verification through GitHub Actions
 
 ## Development Environment
